@@ -14,14 +14,22 @@ public abstract class BaseFragment<T extends ViewBinding> extends Fragment {
 
     protected T binding;
 
+    protected BaseActivity parent;
+
     protected abstract T viewInflateBinding(LayoutInflater inflater, ViewGroup parent, boolean toAttach);
 
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        parent = (BaseActivity) getActivity();
+    }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = viewInflateBinding(inflater, container, false);
         return binding.getRoot();
-
     }
 }
