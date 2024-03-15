@@ -3,7 +3,7 @@
 
     <domain-config cleartextTrafficPermitted="true">
         <domain includeSubdomains="true">api.weatherapi.com</domain>
-        <domain includeSubdomains = "true">address.annyong.store</domain>
+        <domain includeSubdomains = "true">//cdn.weatherapi.com</domain>
         <domain includeSubdomains = "true">t1.daumcdn.net</domain>
         <domain includeSubdomains = "true">postcode.map.daum.net</domain>
     </domain-config>
