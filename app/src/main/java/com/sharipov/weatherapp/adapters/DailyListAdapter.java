@@ -46,7 +46,8 @@ public class DailyListAdapter extends BaseRecyclerAdapter {
         protected void onBind(int position) {
             Hour hour = hourArrayList.get(position);
             binding.textViewTime.setText(hour.getTime().substring(hour.time.length()-4, hour.time.length()));
-            binding.textViewDay.setText(hour.condition.text);
+            binding.textViewDay.setText(hour.condition.getText());
+
 
         }
     }

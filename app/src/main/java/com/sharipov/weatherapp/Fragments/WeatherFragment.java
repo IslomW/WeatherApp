@@ -83,7 +83,7 @@ public class WeatherFragment extends BaseFragment<FragmentWeatherBinding> {
                     weatherInfo.setCityName(forecastMain.location.getName());
                     weatherInfo.setDate(String.valueOf(forecastMain.location.getLocaltime()));
                     weatherInfo.setTemp(String.valueOf(forecastMain.current.getTempC()));
-                    weatherInfo.setConditionDay(forecastMain.current.condition.text);
+                    weatherInfo.setConditionDay(forecastMain.current.getCondition().getText());
 
                     weatherInfoArrayList.add(weatherInfo);
                     weatherPagerAdapter.notifyDataSetChanged();

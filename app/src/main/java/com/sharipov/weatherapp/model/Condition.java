@@ -6,22 +6,19 @@ import com.google.gson.annotations.SerializedName;
 public class Condition {
     @SerializedName("text")
     @Expose
-    public String text;
+    private String text;
     @SerializedName("icon")
     @Expose
-    public String icon;
-    @SerializedName("code")
-    @Expose
-    public int code;
+    private String icon;
 
 
-    public Condition() {
+    private Condition() {
     }
 
-    public Condition(String text, String icon, int code) {
+    public Condition(String text, String icon) {
         this.text = text;
         this.icon = icon;
-        this.code = code;
+
     }
 
     public String getText() {
@@ -40,11 +37,4 @@ public class Condition {
         this.icon = icon;
     }
 
-    public int getCode() {
-        return code;
-    }
-
-    public void setCode(int code) {
-        this.code = code;
-    }
 }

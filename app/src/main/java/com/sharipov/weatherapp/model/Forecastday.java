@@ -12,12 +12,6 @@ public class Forecastday implements Serializable
     @SerializedName("date")
     @Expose
     public String date;
-    @SerializedName("date_epoch")
-    @Expose
-    public int dateEpoch;
-    @SerializedName("day")
-    @Expose
-    public Day day;
 
     @SerializedName("hour")
     @Expose
@@ -26,10 +20,8 @@ public class Forecastday implements Serializable
     public Forecastday() {
     }
 
-    public Forecastday(String date, int dateEpoch, Day day, List<Hour> hour) {
+    public Forecastday(String date,  List<Hour> hour) {
         this.date = date;
-        this.dateEpoch = dateEpoch;
-        this.day = day;
         this.hour = hour;
     }
 
@@ -37,8 +29,6 @@ public class Forecastday implements Serializable
     public String toString() {
         return "Forecastday{" +
                 "date='" + date + '\'' +
-                ", dateEpoch=" + dateEpoch +
-                ", day=" + day +
                 ", hour=" + hour +
                 '}';
     }
@@ -51,21 +41,6 @@ public class Forecastday implements Serializable
         this.date = date;
     }
 
-    public int getDateEpoch() {
-        return dateEpoch;
-    }
-
-    public void setDateEpoch(int dateEpoch) {
-        this.dateEpoch = dateEpoch;
-    }
-
-    public Day getDay() {
-        return day;
-    }
-
-    public void setDay(Day day) {
-        this.day = day;
-    }
 
     public List<Hour> getHour() {
         return hour;
