@@ -10,18 +10,18 @@ public class Hour implements Serializable
 
     @SerializedName("time")
     @Expose
-    public String time;
+    private String time;
     @SerializedName("temp_c")
     @Expose
-    public double tempC;
+    private double tempC;
 
     @SerializedName("is_day")
     @Expose
-    public int isDay;
+    private int isDay;
 
     @SerializedName("condition")
     @Expose
-    public Condition condition;
+    private Condition condition;
 
 
 
@@ -66,5 +66,13 @@ public class Hour implements Serializable
 
     public void setIsDay(int isDay) {
         this.isDay = isDay;
+    }
+
+    public Condition getCondition() {
+        return condition;
+    }
+
+    public void setCondition(Condition condition) {
+        this.condition = condition;
     }
 }

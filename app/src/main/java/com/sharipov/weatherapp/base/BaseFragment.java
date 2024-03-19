@@ -15,6 +15,7 @@ public abstract class BaseFragment<T extends ViewBinding> extends Fragment {
     protected T binding;
 
     protected BaseActivity parent;
+    protected BaseViewHolder baseViewHolder;
 
     protected abstract T viewInflateBinding(LayoutInflater inflater, ViewGroup parent, boolean toAttach);
 

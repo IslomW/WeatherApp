@@ -77,8 +77,17 @@ public class WeatherFragment extends BaseFragment<FragmentWeatherBinding> {
                 if (response.isSuccessful()) {
                     ForecastMain forecastMain = response.body();
                     hourArrayList.addAll(forecastMain.forecast.getForecastday().get(0).getHour());
-                    dailyListAdapter.notifyDataSetChanged();
+                    if (hourArrayList.size() != 0){
+                        for(int i = 0; i < hourArrayList.size(); i++){
+                            int timeLength = hourArrayList.get(i).getTime().length();
+                            String time = hourArrayList.get(i).getTime().substring(timeLength-5, timeLength);
+                            hourArrayList.get(i).setTime(time);
+                        }
+                    }
                     Log.d("WEATHER", hourArrayList.toString());
+
+
+                    dailyListAdapter.notifyDataSetChanged();
                     //
                     weatherInfo.setCityName(forecastMain.location.getName());
                     weatherInfo.setDate(String.valueOf(forecastMain.location.getLocaltime()));
@@ -97,4 +106,6 @@ public class WeatherFragment extends BaseFragment<FragmentWeatherBinding> {
         });
 
     }
+
+
 }

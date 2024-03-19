@@ -9,8 +9,11 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.bumptech.glide.Glide;
+import com.sharipov.weatherapp.R;
 import com.sharipov.weatherapp.base.BaseFragment;
 import com.sharipov.weatherapp.databinding.FragmentCountryBinding;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -35,6 +38,7 @@ public class CityFragment extends BaseFragment<FragmentCountryBinding> {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        Glide.with(binding.image).load("https://codeskulptor-assets.commondatastorage.googleapis.com/assets_clock_background.png").into(binding.image);
 
     }
 

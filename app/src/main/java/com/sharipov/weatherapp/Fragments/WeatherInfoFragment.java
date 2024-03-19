@@ -1,6 +1,7 @@
 package com.sharipov.weatherapp.Fragments;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,8 +37,12 @@ public class WeatherInfoFragment extends BaseFragment<ItemWeatherInfoBinding> {
         if (weatherInfo != null){
             binding.textViewCountry.setText(weatherInfo.getCityName());
             binding.textViewCelsius.setText(weatherInfo.getTemp());
+            String time = weatherInfo.getDate().substring(weatherInfo.getDate().length() -5 ,weatherInfo.getDate().length());
+            binding.icWeather.setImageResource(parent.setIcon(weatherInfo.getConditionDay().trim().toLowerCase(), time));
+
             binding.textViewData.setText(weatherInfo.getDate());
             binding.day.setText(weatherInfo.getConditionDay());
+
         }
     }
 

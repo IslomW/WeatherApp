@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="60dp"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_margin="2dp"
-    android:layout_height="75dp">
+    android:layout_width="80dp"
+    android:layout_height="100dp"
+    android:layout_margin="2dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
-        android:orientation="vertical"
-        >
-        
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:maxLines="1"
-            tools:text="Now"
-            android:id="@+id/text_view_time"
-            android:textSize="10sp"
-            />
-        
-        <ImageView
-            android:layout_width="35dp"
-            android:layout_marginTop="5dp"
-            android:id="@+id/ic_weather"
-            android:layout_height="35dp"/>
+        android:orientation="vertical">
 
         <TextView
+            android:id="@+id/text_view_time"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textSize="10sp"
+            tools:text="Now" />
+
+        <ImageView
+            android:id="@+id/ic_weather"
+            android:layout_width="45dp"
+            android:layout_height="50dp"
+            tools:src="@drawable/_00"
+            />
+
+        <TextView
+            android:id="@+id/text_view_day"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:textSize="8sp"
-            android:id="@+id/text_view_day"
-            tools:text="Sunny"
-            android:layout_marginTop="8dp"
-            />
-        
+            android:maxLines="2"
+            tools:text="Sunny" />
+
     </LinearLayout>
-    
+
 
 </androidx.cardview.widget.CardView>
